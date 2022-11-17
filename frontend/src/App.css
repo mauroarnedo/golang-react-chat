@@ -1,0 +1,9 @@
+.chatContain{
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.chatInput {
+  height: 20vh;
+}
