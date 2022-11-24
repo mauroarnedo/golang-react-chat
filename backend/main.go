@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/mauroarnedo/golang-chat/pkg/websocket"
 )
@@ -30,7 +31,11 @@ func setupRoutes() {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8000"
+	}
 	fmt.Println("Full stack chat sample")
 	setupRoutes()
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":"+port, nil)
 }
