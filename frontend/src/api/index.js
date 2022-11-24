@@ -1,4 +1,5 @@
-const socket = new WebSocket('ws://localhost:8000/ws');
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || "ws://localhost:8000/ws";
+const socket = new WebSocket(SERVER_URL);
 
 export const connect = (cb) => {
     socket.onopen = () => {
